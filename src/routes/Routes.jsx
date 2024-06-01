@@ -4,6 +4,7 @@ import DashboardLayout from "../layout/DashboardLayout";
 import App from "../pages/auth/App";
 import Dashboard from "../pages/dashboard/Dashboard";
 import ErrorPage from "../pages/ErrorPage";
+import RegistrationScreen from "../pages/auth/RegistrationScreen";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
           {
             path: "/",
             element: <App />,
+          },
+          {
+            path: "/registration",
+            element: <RegistrationScreen />,
           },
         ],
       },
