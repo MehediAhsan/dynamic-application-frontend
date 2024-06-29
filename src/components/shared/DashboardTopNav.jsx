@@ -1,11 +1,14 @@
 
 const DashboardTopNav = () => {
     return (
-        <div className="bg-blue-600 rounded">
-           <span>Profile</span> 
-           <span>Profile</span> 
-           <span>Profile</span> 
-           <span>Profile</span> 
+        <div className="bg-[#172437] rounded flex justify-between p-5">
+            <h1 className="text-2xl font-semibold">Title</h1>
+            <div className="flex gap-2">
+                <span>Profile</span>
+                <span>Profile</span>
+                <span>Profile</span>
+                <span>Profile</span>
+            </div>
         </div>
     );
 };

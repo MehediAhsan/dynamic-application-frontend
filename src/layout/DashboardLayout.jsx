@@ -4,11 +4,13 @@ import DashboardTopNav from "../components/shared/DashboardTopNav";
 
 const DashboardLayout = () => {
   return (
-    <div className="flex gap-5 p-5 bg-slate-200">
-      <DashboardSideNav />
-      <div className="flex flex-col gap-5 w-full">
+    <div className="flex gap-5 p-5 bg-[#1C2B3E] text-gray-200">
+      <div className="w-[15%]">
+        <DashboardSideNav />
+      </div>
+      <div className="flex flex-col gap-5 w-[85%]">
         <DashboardTopNav />
-        <div className="bg-yellow-500 rounded">
+        <div className="bg-[#172437] rounded p-5">
           <Outlet />
         </div>
       </div>
