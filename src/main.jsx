@@ -4,11 +4,14 @@ import { RouterProvider } from "react-router-dom";
 import "./index.css";
 import router from "./routes/Routes.jsx";
 import SiveNavOpenProvider from "./context/SiveNavOpenProvider";
+import ThemeProvider from "./context/ThemeProvider.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <SiveNavOpenProvider>
-      <RouterProvider router={router} />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </SiveNavOpenProvider>
   </React.StrictMode>
 );
