@@ -1,23 +1,21 @@
 import { useContext } from "react";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { SideNavOpenContext } from "../../context/SiveNavOpenProvider";
+import { IoMdNotifications } from "react-icons/io";
 
 const DashboardTopNav = () => {
   const { sideNavOpen, setSideNavOpen } = useContext(SideNavOpenContext);
 
   return (
-    <div className="bg-[#172437] rounded flex justify-between p-5">
-      <h1 className="text-2xl font-semibold">Title</h1>
-      <div className="flex gap-2 items-center">
-        <span>
-          <FaBarsStaggered
-            className="cursor-pointer block lg:hidden"
-            onClick={() => setSideNavOpen(!sideNavOpen)}
-          />
-        </span>
-        <span>Profile</span>
-        <span>Profile</span>
-        <span>Profile</span>
+    <div className="bg-[#172437] rounded flex justify-between p-5 shadow-sm shadow-[#7367F0]">
+      <h1 className="text-2xl font-semibold text-[#7367F0]">Dashboard</h1>
+      <div className="flex gap-4 items-center">
+        <FaBarsStaggered
+          className="cursor-pointer block lg:hidden"
+          onClick={() => setSideNavOpen(!sideNavOpen)}
+        />
+        <IoMdNotifications size={24} />
+        <img className="h-9 w-9 rounded-full shadow" src="https://avatars.githubusercontent.com/u/83613654?v=4" alt="" />
       </div>
     </div>
   );
