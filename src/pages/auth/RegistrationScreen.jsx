@@ -1,5 +1,10 @@
 
 import { useForm } from "react-hook-form";
+import { BiSolidLock } from "react-icons/bi";
+import { FaFacebook, FaGoogle, FaUser } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { PiPhoneFill } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 
 const RegistrationScreen = () => {
@@ -8,81 +13,73 @@ const RegistrationScreen = () => {
         register,
         handleSubmit,
         reset,
+        formState: { errors }
     } = useForm();
+
     const onSubmit = (value) => {
         console.log(value);
         reset();
     };
     return (
-        <div className='md:flex justify-center gap-10 items-center bg-white'>
-            <div className='w-full md:w-1/2 py-10 bg-[#f5f7fc]'>
-                {/* <img src={logo} className='w-20 h-20 mx-auto mb-5' /> */}
-                {/* <h1 className='text-center font-bold'>নৌযান পরিবহন এবং বাণিজ্যকে আরো সহজ এবং দ্রুতগামী করতে
-                    এখনই রেজিস্ট্রেশন করুন</h1> */}
-                <img src="https://images.unsplash.com/photo-1595126731003-755959b6baf8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='mx-auto object-cover px-10' />
-            </div>
-            <div
-                className="text-black w-full md:w-1/2 py-10 md:py-0"
-            >
-                <div className='w-9/12 md:w-7/12 mx-auto'>
-                    <h1 className='font-semibold text-xl mb-6'>Register your account</h1>
-                    <form onSubmit={handleSubmit(onSubmit)} className="text-secondary">
+        <div className='md:flex justify-center gap-10 items-center bg-[#101f36] h-screen text-cyan-700 '>
+            <div className="m-auto flex flex-col items-center gap-10 rounded-3xl lg:w-[40%] md:w-[60%] w-[90%] p-10 border border-cyan-700">
 
-                        <div className='mb-4'>
-                            <label
-                                className="text-sm font-semibold text-gray-600 after:content-['*'] after:text-red-400"
-                            > Email
-                            </label>
-                            <input
-                                {...register("email", { required: true })}
-                                required
-                                type="email"
-                                placeholder='Your email here'
-                                className="w-full px-3 py-5 mt-1 outline-none ring-none border border-gray-500 bg-[#E8F0FE] text-xs rounded"
-                            />
-                        </div>
-
-                        <div className='mb-4'>
-                            <label
-                                className="text-sm font-semibold text-gray-600 after:content-['*'] after:text-red-400"
-                            >  Phone Number
-                            </label>
-                            <input
-                                onWheel={(e) => e.target.blur()}
-                                {...register("phone", { required: true })}
-                                required
-                                type="number"
-                                placeholder='Type your phone number'
-                                className="w-full px-3 py-5 mt-1 outline-none ring-none border border-gray-500 bg-[#E8F0FE] text-xs rounded"
-                            />
-                        </div>
-
-                        <div className='mb-4'>
-                            <label
-                                className="text-sm font-semibold text-gray-600 after:content-['*'] after:text-red-400"
-                            > Password
-                            </label>
-                            <div className='relative'>
-                                <input
-                                    {...register("password", { required: true })}
-                                    required
-                                    // type={`${show ? 'text' : 'password'}`}
-                                    placeholder='Type your password'
-                                    className="w-full px-3 py-5 mt-1 outline-none ring-none border border-gray-500 bg-[#E8F0FE] text-xs rounded"
-                                />
-                                {/* {
-                                    show ? <IoIosEye className='absolute top-6 right-4 text-xl text-gray-600 cursor-pointer' onClick={() => setShow(!show)} /> : <IoIosEyeOff className='absolute top-6 right-4 text-xl text-gray-600 cursor-pointer' onClick={() => setShow(!show)} />
-                                } */}
-                            </div>
+                <form
+                    className="flex flex-col items-center gap-10"
+                    onSubmit={handleSubmit(onSubmit)}
+                >
+                    <h1 className="text-[36px] font-semibold text-cyan-700 mb-10">
+                        Registration
+                    </h1>
+                    <div className="bg-gradient-to-r from-[#18273d] to-[#1f3e6c] flex items-center gap-5 px-4 rounded-full w-[350px]">
+                        <label htmlFor="email"><MdEmail className="w-5 h-5" /></label>
+                        <input
+                            type="email"
+                            {...register("email")}
+                            id="email"
+                            className="w-full bg-transparent border-transparent outline-none py-3 webkit-text-fill-color autofill:active:shadow-transparent autofill:active:bg-transparent autofill:transition-[background-color] autofill:duration-[5000s] autofill:delay-0 autofill:ease-in-out"
+                            placeholder='Email Address'
+                        />
+                    </div>
+                    <div className="bg-gradient-to-r from-[#18273d] to-[#1f3e6c] flex items-center gap-5 px-4 rounded-full w-[350px]">
+                        <label htmlFor="email"><PiPhoneFill className="w-5 h-5" /></label>
+                        <input
+                            type="number"
+                            onWheel={(e) => e.target.blur()}
+                            {...register("phone")}
+                            id="phone"
+                            className="w-full bg-transparent border-transparent outline-none py-3 webkit-text-fill-color autofill:active:shadow-transparent autofill:active:bg-transparent autofill:transition-[background-color] autofill:duration-[5000s] autofill:delay-0 autofill:ease-in-out"
+                            placeholder='Phone Number'
+                        />
+                    </div>
+                    <div className="bg-gradient-to-r from-[#18273d] to-[#1f3e6c] flex items-center gap-5 px-4 rounded-full w-[350px]">
+                        <label htmlFor="email"><BiSolidLock className="w-5 h-5" /></label>
+                        <input
+                            type="password"
+                            onWheel={(e) => e.target.blur()}
+                            {...register("password")}
+                            id="password"
+                            className="w-full bg-transparent border-transparent outline-none py-3 webkit-text-fill-color autofill:active:shadow-transparent autofill:active:bg-transparent autofill:transition-[background-color] autofill:duration-[5000s] autofill:delay-0 autofill:ease-in-out"
+                            placeholder='Password'
+                        />
+                    </div>
+                    <div className="flex gap-10 items-center">
+                        <div>
+                            <p>Forget password? <Link to={"#"} className="text-blue-400 hover:text-red-800" >click here</Link></p>
                         </div>
 
                         <button
-                            type='submit'
-                            className="w-full rounded bg-blue-500 text-orange-50 p-3 text-center font-bold text-sm mt-5"
+                            type="submit"
+                            className="px-5 py-2 rounded-xl bg-gradient-to-r from-[#18273d] to-[#1f3e6c] text-cyan-300 hover:bg-gradient-to-l hover:from-[#1f3e6c] hover:to-[#1f3e6c]"
                         >
-                            Register
+                            Submit
                         </button>
-                    </form>
+                    </div>
+                </form>
+
+                <div className="flex gap-10 items-center justify-around">
+                    <FaFacebook className="w-7 h-7" />
+                    <FaGoogle className="w-7 h-7" />
                 </div>
             </div>
         </div>
