@@ -23,10 +23,10 @@ const RegistrationScreen = () => {
     };
     return (
         <div className='md:flex justify-center gap-10 items-center bg-[#101f36] h-screen text-cyan-700 '>
-            <div className="m-auto flex flex-col items-center gap-10 rounded-3xl lg:w-[40%] md:w-[60%] w-[90%] p-10 border border-cyan-700">
+            <div className="m-auto flex flex-col items-center gap-10 rounded-3xl lg:w-[30%] md:w-[60%] w-[90%] py-10 px-16 border border-cyan-700">
 
                 <form
-                    className="flex flex-col items-center gap-10"
+                    className="flex flex-col items-center gap-10 w-full"
                     onSubmit={handleSubmit(onSubmit)}
                 >
                     <h1 className="text-[36px] font-semibold text-cyan-700 mb-10">
@@ -85,7 +85,7 @@ const RegistrationScreen = () => {
                             <p className="text-red-400 text-xs flex items-center ml-5 mt-1"><CgDanger /> {errors?.password?.message}</p>
                         }
                     </div>
-                    <div className="flex gap-10 items-center">
+                    <div className="flex gap-10 items-center w-full justify-between">
                         <div>
                             <p>Forget password? <Link to={"#"} className="text-blue-400 hover:text-red-800" >click here</Link></p>
                         </div>
@@ -99,7 +99,7 @@ const RegistrationScreen = () => {
                     </div>
                 </form>
                 <div className="space-y-3">
-                    <div className="flex gap-10 items-center justify-around">
+                    <div className="flex gap-10 items-center justify-center">
                         <FaFacebook className="w-7 h-7" />
                         <FaGoogle className="w-7 h-7" />
                     </div>
