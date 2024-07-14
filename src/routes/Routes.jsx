@@ -5,6 +5,7 @@ import App from "../pages/auth/App";
 import Dashboard from "../pages/dashboard/Dashboard";
 import ErrorPage from "../pages/ErrorPage";
 import RegistrationScreen from "../pages/auth/RegistrationScreen";
+import LoginScreen from "../pages/auth/LoginScreen";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
           {
             path: "/registration",
             element: <RegistrationScreen />,
+          },
+          {
+            path: "/login",
+            element: <LoginScreen />,
           },
         ],
       },
