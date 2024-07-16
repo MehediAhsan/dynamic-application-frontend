@@ -5,10 +5,13 @@ import { CgDanger } from "react-icons/cg";
 import { FaFacebook, FaGoogle } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
+import loginBg from "../../assets/auth/loginBg.jpg";
+import { useState } from "react";
+import { HiMiniEye, HiMiniEyeSlash } from "react-icons/hi2";
 
 
 const LoginScreen = () => {
-    // const [show, setShow] = useState(false)
+    const [show, setShow] = useState(false)
     const {
         register,
         handleSubmit,
@@ -21,18 +24,25 @@ const LoginScreen = () => {
         reset();
     };
     return (
-        <div className='flex justify-center gap-10 items-center bg-[#101f36] h-screen text-cyan-700 '>
-            <div className="m-auto flex flex-col items-center gap-10 rounded-3xl lg:w-[30%] md:w-[60%] w-[95%] py-10 px-8 md:px-16 border border-cyan-700">
+        <div
+            className='flex justify-center gap-10 items-center bg-[#101f36] h-screen text-cyan-700 '
+            style={{
+                backgroundImage: `url(${loginBg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+            }}
+        >
+            <div className="m-auto flex flex-col items-center gap-10 rounded-xl lg:w-[30%] md:w-[60%] w-[95%] py-10 px-8 md:px-16 border-[0.5px] border-cyan-800 backdrop-blur-md">
 
                 <form
                     className="flex flex-col items-center gap-10 w-full"
                     onSubmit={handleSubmit(onSubmit)}
                 >
-                    <h1 className="text-[36px] font-semibold text-cyan-700 mb-10">
+                    <h1 className="text-[36px] font-semibold text-cyan-500 mb-10">
                         Login
                     </h1>
                     <div className="w-full">
-                        <div className="bg-gradient-to-r from-[#18273d] to-[#1f3e6c] flex items-center gap-5 px-4 rounded-full w-full active:bg-gradient-to-l active:from-[#1f3e6c] active:to-[#1f3e6c]">
+                        <div className="bg-gradient-to-r from-[#18273d] to-[#1f3e6c] flex items-center gap-5 px-4 rounded-full w-full">
                             <label htmlFor="userName"><MdEmail className="w-5 h-5" /></label>
                             <input
                                 type="text"
@@ -48,20 +58,27 @@ const LoginScreen = () => {
                             <p className="text-red-400 text-xs flex items-center ml-5 mt-1"><CgDanger /> {errors?.userName?.message}</p>
                         }
                     </div>
-                    
+
                     <div className="w-full">
-                        <div className="bg-gradient-to-r from-[#18273d] to-[#1f3e6c] flex items-center gap-5 px-4 rounded-full w-full active:bg-gradient-to-l active:from-[#1f3e6c] active:to-[#1f3e6c]">
+                        <div className="bg-gradient-to-r from-[#18273d] to-[#1f3e6c] flex items-center gap-5 px-4 rounded-full w-full">
                             <label htmlFor="email"><BiSolidLock className="w-5 h-5" /></label>
-                            <input
-                                type="password"
-                                onWheel={(e) => e.target.blur()}
-                                {...register("password",
-                                    { required: "This field is required" }
-                                )}
-                                id="password"
-                                className="w-full bg-transparent border-transparent outline-none py-3 webkit-text-fill-color autofill:active:shadow-transparent autofill:active:bg-transparent autofill:transition-[background-color] autofill:duration-[5000s] autofill:delay-0 autofill:ease-in-out"
-                                placeholder='Password'
-                            />
+                            <div className="relative w-full ">
+                                <input
+                                    type={show ? "text" : "password"}
+                                    onWheel={(e) => e.target.blur()}
+                                    {...register("password",
+                                        { required: "This field is required" }
+                                    )}
+                                    id="password"
+                                    className="w-full bg-transparent border-transparent outline-none py-3 webkit-text-fill-color autofill:active:shadow-transparent autofill:active:bg-transparent autofill:transition-[background-color] autofill:duration-[5000s] autofill:delay-0 autofill:ease-in-out"
+                                    placeholder='Password'
+                                />
+                                <div className="absolute right-2 top-1/2 -translate-y-1/2 text-xl cursor-pointer" onClick={()=>setShow(!show)}>
+                                    {
+                                        show ? <HiMiniEyeSlash /> : <HiMiniEye />
+                                    }
+                                </div>
+                            </div>
                         </div>
                         {errors?.password?.message &&
                             <p className="text-red-400 text-xs flex items-center ml-5 mt-1"><CgDanger /> {errors?.password?.message}</p>
