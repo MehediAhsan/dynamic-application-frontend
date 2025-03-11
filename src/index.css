@@ -32,6 +32,50 @@ input[type="number"] {
   -webkit-text-fill-color: rgb(177, 193, 201);
 }
 
+.animated-border {
+  position: relative;
+  display: inline-block;
+  padding: 20px 40px;
+  font-size: 20px;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Form css */
+/* .form-container {
+  width: 100%;
+  background: linear-gradient(#282A5A, #383d52) padding-box,
+    linear-gradient(145deg, transparent 35%, #D4A138, #D4A138) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  background-size: 200% 100%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
 /* Change the white to any color */
 /* input:-webkit-autofill:active {
   -webkit-box-shadow: transparent !important;

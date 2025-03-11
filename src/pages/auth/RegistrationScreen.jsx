@@ -26,7 +26,7 @@ const RegistrationScreen = () => {
     };
     return (
         <div className='flex justify-center gap-10 items-center bg-[#101f36] h-screen text-cyan-700 '>
-            <div className="m-auto flex flex-col items-center gap-10 rounded-3xl lg:w-[30%] md:w-[60%] w-[95%] py-10 px-8 md:px-16 border border-cyan-700">
+            <div className="m-auto flex flex-col items-center gap-10 rounded-3xl lg:w-[30%] md:w-[60%] w-[95%] py-10 px-8 md:px-16 border border-cyan-700 form-container">
 
                 <form
                     className="flex flex-col items-center gap-10 w-full"
