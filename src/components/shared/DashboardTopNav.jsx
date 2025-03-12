@@ -15,8 +15,8 @@ const DashboardTopNav = () => {
   };
 
   return (
-    <div className={`${theme ? "bg-[#172437]" : "bg-white"} rounded flex justify-between p-5 shadow-sm shadow-[#7367F0]`}>
-      <h1 className="text-2xl font-semibold text-[#7367F0]">Dashboard</h1>
+    <div className={`${theme ? "bg-[#172437]" : "bg-white"} rounded flex justify-between p-5 shadow-sm shadow-primary`}>
+      <h1 className="text-2xl font-semibold text-primary">Dashboard</h1>
       <div className="flex gap-4 items-center">
         <FaBarsStaggered
           className="cursor-pointer block lg:hidden"

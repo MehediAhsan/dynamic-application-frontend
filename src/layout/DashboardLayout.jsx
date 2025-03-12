@@ -12,7 +12,7 @@ const DashboardLayout = () => {
       <DashboardSideNav />
       <div className="flex flex-col gap-5 w-[100vw] lg:w-[calc(100vw-280px)] transition-all duration-500">
         <DashboardTopNav />
-        <div className={`rounded p-5 shadow shadow-[#7367F0] h-full ${theme ? "bg-[#172437]": "bg-white"}`}>
+        <div className={`rounded p-5 shadow shadow-primary h-full ${theme ? "bg-[#172437]": "bg-white"}`}>
           <Outlet />
         </div>
       </div>
